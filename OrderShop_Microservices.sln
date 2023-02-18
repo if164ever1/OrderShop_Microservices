@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{50
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Web", "Shop.Web\Shop.Web.csproj", "{A935D9CD-2A11-4067-9A68-BBADD10FB46F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{E9C84266-F1A0-4E13-B17F-F770CD5CB591}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Services.ProductAPI", "Shop.Services.ProductAPI\Shop.Services.ProductAPI.csproj", "{C69DEB98-2FAF-4D77-B59C-45EEAFB76DD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{A935D9CD-2A11-4067-9A68-BBADD10FB46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A935D9CD-2A11-4067-9A68-BBADD10FB46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A935D9CD-2A11-4067-9A68-BBADD10FB46F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C69DEB98-2FAF-4D77-B59C-45EEAFB76DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C69DEB98-2FAF-4D77-B59C-45EEAFB76DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C69DEB98-2FAF-4D77-B59C-45EEAFB76DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C69DEB98-2FAF-4D77-B59C-45EEAFB76DD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A935D9CD-2A11-4067-9A68-BBADD10FB46F} = {5095884D-AE33-415C-A943-313E2DAD9EC3}
+		{C69DEB98-2FAF-4D77-B59C-45EEAFB76DD5} = {E9C84266-F1A0-4E13-B17F-F770CD5CB591}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8CD7D1D8-A16F-4DE2-91AD-6A0C19C0D6C6}
