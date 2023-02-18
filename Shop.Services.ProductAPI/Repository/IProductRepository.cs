@@ -7,6 +7,6 @@ namespace Shop.Services.ProductAPI.Repository
 		Task<IEnumerable<ProductDto>> GetAllAsync();
 		Task<ProductDto> GetProductByIdAsync(int productId);
 		Task<ProductDto> CreateUpdateProductAsync(ProductDto productDto);
-		Task<ProductDto> DeleteProductAsync(int productId);
+		Task<bool> DeleteProductAsync(int productId);
 	}
 }
