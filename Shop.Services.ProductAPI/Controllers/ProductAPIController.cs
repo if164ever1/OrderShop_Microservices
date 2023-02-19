@@ -12,17 +12,17 @@ namespace Shop.Services.ProductAPI.Controllers
 
 		public ProductAPIController(IProductRepository productRepository)
 		{
-			_productRepository= productRepository;
-			_responceDto= new ResponceDto();
+			_productRepository = productRepository;
+			_responceDto = new ResponceDto();
 		}
 
 		[HttpGet]
-		public async Task<object> Get() 
+		public async Task<object> Get()
 		{
 			try
 			{
 				IEnumerable<ProductDto> productDtos = await _productRepository.GetAllAsync();
-				_responceDto.Result= productDtos;
+				_responceDto.Result = productDtos;
 			}
 			catch (Exception ex)
 			{
@@ -33,7 +33,7 @@ namespace Shop.Services.ProductAPI.Controllers
 		}
 
 		[HttpGet]
-
+		[Route("{id}")]
 		public async Task<object> Get(int id)
 		{
 			try
@@ -45,6 +45,54 @@ namespace Shop.Services.ProductAPI.Controllers
 			{
 				_responceDto.IsSuccess = false;
 				_responceDto.ErrorMesage = new List<string> { ex.Message };
+			}
+			return _responceDto;
+		}
+
+		[HttpPost]
+		public async Task<object> Post([FromBody] ProductDto productDto)
+		{
+			try
+			{
+				ProductDto productDtos = await _productRepository.CreateUpdateProductAsync(productDto);
+				_responceDto.Result = productDtos;
+			}
+			catch (Exception ex)
+			{
+				_responceDto.IsSuccess = false;
+				_responceDto.ErrorMesage = new List<string> { ex.Message };
+			}
+			return _responceDto;
+		}
+
+		[HttpPut]
+		public async Task<object> Put([FromBody] ProductDto productDto)
+		{
+			try
+			{
+				ProductDto productDtos = await _productRepository.CreateUpdateProductAsync(productDto);
+				_responceDto.Result = productDtos;
+			}
+			catch (Exception ex)
+			{
+				_responceDto.IsSuccess = false;
+				_responceDto.ErrorMesage = new List<string> { ex.Message };
+			}
+			return _responceDto;
+		}
+
+		[HttpDelete]
+		public async Task<object> Delete(int id) 
+		{
+			try
+			{
+				bool isSuccess = await _productRepository.DeleteProductAsync(id);
+				_responceDto.Result = isSuccess;
+			}
+			catch (Exception ex)
+			{
+				_responceDto.IsSuccess=false;
+				_responceDto.ErrorMesage = new List<string> { ex.Message};
 			}
 			return _responceDto;
 		}
