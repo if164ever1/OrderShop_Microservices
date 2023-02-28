@@ -1,4 +1,5 @@
 using Shop.Web;
+using Shop.Web.Services;
 using Shop.Web.Services.IServices;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 //DI
 builder.Services.AddHttpClient<IProductService, IProductService>();
 SD.ProductAPIBase = builder.Configuration["ServiceUrls:ProductAPI"];
-builder.Services.AddScoped<IProductService, IProductService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
