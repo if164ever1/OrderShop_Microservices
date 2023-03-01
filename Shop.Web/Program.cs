@@ -4,7 +4,7 @@ using Shop.Web.Services.IServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//DI
+//dependency injection
 builder.Services.AddHttpClient<IProductService, IProductService>();
 SD.ProductAPIBase = builder.Configuration["ServiceUrls:ProductAPI"];
 builder.Services.AddScoped<IProductService, ProductService>();
@@ -13,8 +13,6 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
